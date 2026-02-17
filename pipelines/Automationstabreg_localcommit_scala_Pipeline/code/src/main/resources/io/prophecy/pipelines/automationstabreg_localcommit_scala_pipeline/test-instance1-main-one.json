@@ -1,0 +1,8 @@
+{
+  "c_array" : [ 22, 22 ],
+  "c_record" : {
+    "c_string" : "overridesama",
+    "c_boolean" : true,
+    "c_float" : -22.22
+  }
+}

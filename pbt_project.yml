@@ -1,0 +1,106 @@
+name: Automationstabreg_localcommit_scala
+description: test random description
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: scala
+buildSystem: ''
+buildSystemDetails:
+  artefactID: automationstabreglocalcommitscala
+  parentArtefactID: abhishekse2etestsprophecyioteam
+  buildSystem: maven
+  author: null
+  createdAt: '2026-02-17 01:41:19'
+pipelines:
+  pipelines/Automationstabreg_localcommit_scala_Pipeline:
+    name: Automationstabreg_localcommit_scala_Pipeline
+    description: automation workflow
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2026-02-17 01:43:57'
+    datasets:
+      inputs:
+      - datasets/test_dataset
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/test_dataset:
+    name: test_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2026-02-17 01:56:05'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 3
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2026-02-17 01:56:05'
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: 2.12.15
+  gemLibsVersion: 1.1.26
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2026-02-17 01:41:19'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies:
+- modifiedAt: '2026-02-17T01:42:16.340Z'
+  name: ProphecyLibsScala
+  version: 9.0.1-SNAPSHOT
+  createdAt: '2026-02-17T01:41:19.140228Z'
+  type: plibMaven
+  enabled: true
+  entity: Project
+  description: Default dependency for Prophecy Libs
+  scope: Project
+  exclusions: []
+  editable: true
+projectDependencies:
+  '1':
+    projectUID: 1
+    projectName: ProphecySparkBasicsScala
+    repositoryPath: gitUri=http://gitserver:3000/J2l8xYbB_team_2/J2l8xYbB_project_1.git&subPath=
+    version: 0.2.6.7
+    isDefault: true
+    author: null
+    createdAt: '2026-02-17 01:40:55'
+  '2':
+    projectUID: 2
+    projectName: ProphecyWarehouseScala
+    repositoryPath: gitUri=http://gitserver:3000/J2l8xYbB_team_2/J2l8xYbB_project_2.git&subPath=
+    version: 0.0.6
+    isDefault: true
+    author: null
+    createdAt: '2026-02-17 01:40:55'
+  '15':
+    projectUID: 15
+    projectName: scala_project
+    repositoryPath: gitUri=http://gitserver:3000/2UqZSjZL_team_5/9HoyFqLU_project_15.git&subPath=
+    version: scala_project/v1
+    isDefault: false
+    author: null
+    createdAt: '2026-02-17 01:40:55'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}
+projectConfigurations: {}

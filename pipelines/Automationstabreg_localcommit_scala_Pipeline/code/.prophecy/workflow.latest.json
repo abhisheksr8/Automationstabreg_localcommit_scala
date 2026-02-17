@@ -1,0 +1,332 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "9.0.1-SNAPSHOT"
+      },
+      "sparkConfigJinjaEnabled" : true,
+      "workflowMode" : "batch"
+    },
+    "id" : "1",
+    "uri" : "pipelines/Automationstabreg_localcommit_scala_Pipeline",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "Automationstabreg_localcommit_scala_Pipeline",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true,
+      "sparkConfigOptions" : {
+        "disableSparkCreationTimeConfigGeneration" : true
+      }
+    },
+    "language" : "scala",
+    "fabricId" : "3",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "scala",
+      "udfs" : [ ],
+      "functionPackageName" : "abhishekse2etestsprophecyioteam.automationstabreglocalcommitscala.functions",
+      "sharedFunctionPackageNames" : [ "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions", "io.prophecy.scalamaskinggems.functions", "io.prophecy.abiscalagems.functions", "abhishekse2etestsprophecyioteam.scalaproject.functions" ]
+    },
+    "udafs" : {
+      "language" : "scala",
+      "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "c_array",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "long",
+              "value" : null
+            },
+            "value" : [ 10, 20, 100, -10, 0, 20 ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_int_basic",
+          "kind" : {
+            "type" : "int",
+            "value" : -65530
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "c_record",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ {
+              "name" : "c_string",
+              "kind" : {
+                "type" : "string",
+                "value" : "this is my123string sama"
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_boolean",
+              "kind" : {
+                "type" : "boolean",
+                "value" : false
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
+              "name" : "c_float",
+              "kind" : {
+                "type" : "float",
+                "value" : -23.34
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            } ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "test-instance1-main-one",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.default.parallelism",
+      "value" : "4"
+    }, {
+      "name" : "spark.sql.legacy.allowUntypedScalaUDF",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "1",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "2",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "3",
+      "projectName" : "ProphecyMaskingScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "8",
+      "projectName" : "ProphecySparkAbinitioScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "15",
+      "projectName" : "scala_project",
+      "externalDependencies" : [ {
+        "type" : "plibMaven",
+        "modifiedAt" : "2024-09-19T09:32:37.717701Z",
+        "name" : "plibMaven",
+        "enabled" : true,
+        "version" : "8.1.4",
+        "id" : "295022945",
+        "createdAt" : "2024-09-19T09:32:37.717701Z",
+        "entity" : "Project"
+      } ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "io.prophecy.pipelines.automationstabreg_localcommit_scala_pipeline",
+    "configTopLevelPackage" : "io.prophecy.pipelines.automationstabreg_localcommit_scala_pipeline",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "ocW2qEQdQ9IJ8jG5xqEER",
+    "source" : "BfmK2gP2GjzF8Gcctqh-J$$cC-4i6he4yh7rbcHhd_n-",
+    "sourcePort" : "UN_fLOnL2zuOKYia0Eoc_$$Ibkg8_uC3jC1lJ0x0AE4M",
+    "target" : "bU1vzVlVj6fFQ9Nu6BrHP$$2iDOO59PxF79SaPM06kg5",
+    "targetPort" : "NtFtWWue_BfKB03eemzj9$$6wfHRr-Dqju7G3hmoo8UN"
+  } ],
+  "processes" : {
+    "BfmK2gP2GjzF8Gcctqh-J$$cC-4i6he4yh7rbcHhd_n-" : {
+      "id" : "BfmK2gP2GjzF8Gcctqh-J$$cC-4i6he4yh7rbcHhd_n-",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "test_dataset",
+        "slug" : "test_dataset",
+        "x" : 20,
+        "y" : 220,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UN_fLOnL2zuOKYia0Eoc_$$Ibkg8_uC3jC1lJ0x0AE4M",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/test_dataset"
+      }
+    },
+    "bU1vzVlVj6fFQ9Nu6BrHP$$2iDOO59PxF79SaPM06kg5" : {
+      "id" : "bU1vzVlVj6fFQ9Nu6BrHP$$2iDOO59PxF79SaPM06kg5",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "concat_config_fields",
+        "slug" : "concat_config_fields",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Creates a combined configuration value for each record, supporting customized reporting or analysis based on business settings.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "NtFtWWue_BfKB03eemzj9$$6wfHRr-Dqju7G3hmoo8UN",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "first_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_open_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "1IZcgdf-eHwxkMXrapR5c$$vpiJIUye89hyARYlAaaHA",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "target" : "c_config_col",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "concat('$c_int_basic', '$c_record.c_string', '$c_array[0]')"
+          },
+          "description" : ""
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/J2l8xYbB_team_2/J2l8xYbB_project_1.git&subPath=&tag=0.2.6.7&projectSubscriptionProjectId=1&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
