@@ -108,7 +108,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "test-instance1-main-one",
+      "selected" : "test_new_config",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
