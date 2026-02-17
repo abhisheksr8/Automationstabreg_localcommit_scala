@@ -1,6 +1,6 @@
 name: Automationstabreg_localcommit_scala
 description: test random description
-version: 0.0.1
+version: 1.0.0
 author: abhisheks+e2etests@prophecy.io
 language: scala
 buildSystem: ''
